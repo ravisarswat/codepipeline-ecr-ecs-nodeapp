@@ -21,10 +21,9 @@ phases:
       - sudo cat /etc/group
       - sudo cat /etc/passwd
       - whoami
-      - ls -l /var/run/docker.sock
+      - sudo usermod -aG docker $USER
+      - stat /var/run/docker.sock
       - sudo docker info
-      - sudo service docker-ce start
-      - sudo ulimit -n unlimited 
       - sudo service docker start
       - sudo service docker status 
       - sudo service docker status > $USER/demofile
