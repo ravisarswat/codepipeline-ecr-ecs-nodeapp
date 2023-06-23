@@ -21,6 +21,7 @@ phases:
       - sudo cat /etc/group
       - sudo cat /etc/passwd
       - whoami
+      - ulimit -a 
       - sudo usermod -aG docker root
       - sudo service docker start
       - sudo service docker status 
