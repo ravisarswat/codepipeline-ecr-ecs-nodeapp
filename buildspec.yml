@@ -8,8 +8,6 @@ phases:
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
   build:
     commands:
-      - echo Build started on `date`
-      - echo Building the Docker image... 
       - sudo apt-get update
       - sudo apt-get install ca-certificates curl gnupg -y
       - sudo install -m 0755 -d /etc/apt/keyrings 
@@ -18,10 +16,6 @@ phases:
       - echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
       - sudo apt-get update  
       - sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
-      - sudo cat /etc/group
-      - sudo cat /etc/passwd
-      - whoami
-      - ulimit -a 
       - sudo usermod -aG docker root
       - sudo service docker start
       - sudo service docker status 
