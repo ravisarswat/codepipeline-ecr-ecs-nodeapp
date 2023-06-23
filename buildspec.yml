@@ -21,7 +21,7 @@ phases:
       - sudo cat /etc/group
       - sudo cat /etc/passwd
       - whoami
-      - sudo usermod -aG docker $USER
+      - sudo usermod -aG docker root
       - stat /var/run/docker.sock
       - sudo docker info
       - sudo service docker start
