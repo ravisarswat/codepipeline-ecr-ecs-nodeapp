@@ -21,6 +21,7 @@ phases:
       - sudo cat /etc/group
       - sudo cat /etc/passwd
       - whoami
+      - ls -l /var/run/docker.sock
       - sudo docker info
       - sudo service docker-ce start
       - sudo ulimit -n unlimited 
