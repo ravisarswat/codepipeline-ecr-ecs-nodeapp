@@ -19,6 +19,8 @@ phases:
       - sudo apt-get update  
       - sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
       - sudo cat /etc/group
+      - sudo cat /etc/passwd
+      - sudo whoami
       - sudo docker info
       - sudo service docker-ce start
       - sudo ulimit -n unlimited 
